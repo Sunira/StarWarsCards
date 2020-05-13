@@ -59,9 +59,9 @@ var swapi = {
                           ${swapiChar.name}
                       </h2>
                       <div class="swapi-content">
-                      <p class="swapi-prop"> Skin Color </p> <p class="swapi-val">${swapiChar.skin_color}
-                      <p class="swapi-prop"> Hair Color </p>  <p class="swapi-val">${swapiChar.hair_color}
-                      <p class="swapi-prop"> Skin Color </p> <p class="swapi-val">${swapiChar.skin_color}
+                      <div class="swapi-item"><p class="swapi-prop"> Skin Color </p> <p class="swapi-val">${swapiChar.skin_color}</div>
+                      <div class="swapi-item"><p class="swapi-prop"> Hair Color </p>  <p class="swapi-val">${swapiChar.hair_color}</div>
+                      <div class="swapi-item"><p class="swapi-prop"> Skin Color </p> <p class="swapi-val">${swapiChar.skin_color}</div>
                       </div>
                   </div>
                   `;
