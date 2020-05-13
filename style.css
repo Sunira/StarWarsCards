@@ -1,3 +1,10 @@
+body {
+ background: #282537;
+ background-image: -webkit-radial-gradient(top, circle cover, #18181b 0%, #252233 80%);
+ background-image: -moz-radial-gradient(top, circle cover, #18181b 0%, #252233 80%);
+ background-image: -o-radial-gradient(top, circle cover, #18181b 0%, #252233 80%);
+ background-image: radial-gradient(top, circle cover, #18181b 0%, #252233 80%);
+}
 /* ---------------------- Range Input ----------------- */
 
 .range-wrap {
@@ -6,6 +13,7 @@
   top: 50px;
   display: block;
 }
+
 input[type="range"] {
   -webkit-appearance: none;
   margin: 20px 0;
@@ -76,14 +84,35 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 /*-- cards ----*/
 /*CSS Grid is my favorite. <3 Much easier to handle content with minmax.*/
 .swapi-cards {
-  max-width: 1200px;
-  margin: 4rem auto;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 5px 50px;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .person {
   background-color: gainsboro;
+  color: white;
+  font-family: monospace;
   text-align: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 3px 6px 0px rgba(50, 50, 50, 0.27);
+  -moz-box-shadow:    4px 3px 6px 0px rgba(50, 50, 50, 0.27);
+  box-shadow: -1px -3px 20px 0px rgb(72, 56, 92);
+}
+
+.swapi-content {
+    background-color: white;
+    color: black;
+    min-height: 75px;
+    display: flow-root;
+    border-radius: 10px;
+}
+
+.swapi-prop {
+    padding: 5px;
+    margin: 0;
+    background-color: #f7f7f7;
 }

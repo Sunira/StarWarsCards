@@ -16,11 +16,12 @@ var swapi = {
       rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
 
       // Any time range value is set, collect new SWAPI Chars
+      document.querySelector("#swapi-cards").innerHTML = "";
       swapi.getRandomCharacters(range.value);
     }
     document.addEventListener("DOMContentLoaded", setValue);
     range.value = 10;
-    range.addEventListener("input", setValue);
+    range.addEventListener("change", setValue);
   },
   loadCharacters: async function () {
     const response = await fetch("http://swapi.dev/api/people/");
@@ -45,28 +46,29 @@ var swapi = {
     });
   },
 
-
   loadCharacter: async function (characterID) {
     const response = await fetch("http://swapi.dev/api/people/" + characterID);
     const swapiChar = await response.json();
-    this.createCharacterCard(swapiChar);
+    this.createCharacterCard(swapiChar, characterID);
     console.log(swapiChar);
   },
-  createCharacterCard(swapiChar) {
+  createCharacterCard(swapiChar, characterID) {
     const markup = `
-                  <div class="person">
-                      <h2>
+                  <div class="person" style="background-image:url(https://source.unsplash.com/800x5${characterID}/?space,stars)">
+                      <h2 cass="swapi-name">
                           ${swapiChar.name}
                       </h2>
-                      <p class="skin-color">${swapiChar.skin_color}
-                      <p class="hair-color">${swapiChar.hair_color}
+                      <div class="swapi-content">
+                      <p class="swapi-prop"> Skin Color </p> <p class="swapi-val">${swapiChar.skin_color}
+                      <p class="swapi-prop"> Hair Color </p>  <p class="swapi-val">${swapiChar.hair_color}
+                      <p class="swapi-prop"> Skin Color </p> <p class="swapi-val">${swapiChar.skin_color}
+                      </div>
                   </div>
                   `;
-  
-    const scards = document.querySelector("#swapi-cards");
-    scards.insertAdjacentHTML('beforeend',markup);
-  }
 
+    const scards = document.querySelector("#swapi-cards");
+    scards.insertAdjacentHTML("beforeend", markup);
+  },
 };
 
 swapi.init();
