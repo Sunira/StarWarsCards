@@ -5,14 +5,8 @@ body {
  background-image: -o-radial-gradient(top, circle cover, #18181b 0%, #252233 80%);
  background-image: radial-gradient(top, circle cover, #18181b 0%, #252233 80%);
 }
-/* ---------------------- Range Input ----------------- */
 
-.range-wrap {
-  position: relative;
-  margin: 0 auto;
-  top: 50px;
-  display: block;
-}
+/* Range Slider Input Base from https://codepen.io/onyx1812/pen/GRJxmva */
 
 input[type="range"] {
   -webkit-appearance: none;
@@ -27,7 +21,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   height: 4px;
   cursor: pointer;
   animate: 0.2s;
-  background: #03a9f4;
+  background: #848484;
   border-radius: 25px;
 }
 input[type="range"]::-webkit-slider-thumb {
@@ -41,11 +35,17 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -8px;
 }
 input[type="range"]:focus::-webkit-slider-runnable-track {
-  background: #03a9f4;
+  background: #848484;
 }
+
+/* Custom Range Styles */
 .range-wrap {
-  width: 500px;
+  width: 75%;
   position: relative;
+  margin: 0 auto;
+  top: 50px;
+  display: block;
+  max-width: 1000px;
 }
 .range-value {
   position: absolute;
@@ -56,7 +56,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   height: 35px;
   line-height: 37px;
   text-align: center;
-  background: #03a9f4;
+  background: #848484;
   color: #fff;
   font-size: 28px;
   display: block;
@@ -72,7 +72,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   position: absolute;
   width: 0;
   height: 0;
-  border-top: 10px solid #03a9f4;
+  border-top: 10px solid #848484;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   top: 100%;
@@ -81,8 +81,8 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   margin-top: -1px;
 }
 
-/*-- cards ----*/
-/*CSS Grid is my favorite. <3 Much easier to handle content with minmax.*/
+
+/* CSS Grid is used for easy responsiveness */
 .swapi-cards {
     max-width: 1200px;
     margin: 4rem auto;
@@ -112,8 +112,25 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     border-radius: 10px;
 }
 
+.swapi-name {
+    font-family: Bungee, sans-serif;
+    font-weight: 100;
+    font-size: 1rem;
+    opacity: .9;
+}
+
+.swapi-val {
+    font-family: Montserrat, sans-serif;
+    font-size: .6rem;
+    font-weight: 400;    
+}
+
+
 .swapi-prop {
     padding: 5px;
     margin: 0;
     background-color: #f7f7f7;
+    font-family: Montserrat, sans-serif;
+    font-size: .7rem;
+    font-weight: 600;
 }
